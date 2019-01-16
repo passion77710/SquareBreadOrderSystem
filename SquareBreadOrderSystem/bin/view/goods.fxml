@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.DatePicker?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+	prefHeight="600" prefWidth="810"
+	fx:controller="controller.GoodsController">
+	<HBox>
+		<children>
+			<VBox>
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10" />
+				</padding>
+				<spacing>10</spacing>
+				<children>
+					<HBox> <!-- HBox 컨테이너 선언 -->
+						<children>
+							<Label text="메뉴판" />
+						</children>
+					</HBox>
+				</children>
+				<HBox alignment="CENTER">
+					<ImageView fitHeight="500" fitWidth="500">
+						<image>
+							<Image url="/image/menu.png" />
+						</image>
+					</ImageView>
+				</HBox>
+				<VBox>
+					<padding>
+						<Insets top="20" right="10" bottom="10" left="10" />
+					</padding>
+					<spacing>10</spacing>
+					<children>
+						<HBox> <!-- HBox 컨테이너 선언 -->
+							<children> <!-- 자식 컨트롤 추가 -->
+								<Label text="상품 입력" />
+							</children>
+						</HBox>
+					</children>
+				</VBox>
+				<HBox>
+					<spacing>10</spacing>
+					<Label text="상품명:" />
+					<ComboBox fx:id="cbGoods" promptText="상품선택"
+						prefWidth="100" />
+					<Label text="단가:" />
+					<TextField fx:id="txtg_unit" prefWidth="60" />
+					<Label text="수량:" />
+					<TextField fx:id="txtg_count" prefWidth="40" />
+					<Label text="금액:" />
+					<TextField fx:id="txtg_price" prefWidth="100" />
+				</HBox>
+				<HBox alignment="center">
+					<spacing>10</spacing>
+					<Label text="주문일:" />
+					<DatePicker fx:id="dpg_day" prefWidth="100" />
+					<Label text="총수량:" />
+					<TextField fx:id="txtAllg_count" prefWidth="40" />
+					<Label text="총금액:" />
+					<TextField fx:id="txtAllg_price" prefWidth="100" />
+					<Button fx:id="btnTotal">통계</Button>
+				</HBox>
+				<HBox alignment="center">
+					<spacing>10</spacing>
+					<children>
+						<Button fx:id="btnGyesan">계산</Button>
+						<Button fx:id="btnOk">상품 등록</Button>
+						<Button fx:id="btnCancel">닫기</Button>
+					</children>
+				</HBox>
+				<HBox alignment="center">
+					<spacing>10</spacing>
+					<children> <!-- 자식 컨트롤 추가 -->
+						<Button fx:id="btnEdit">상품 수정</Button>
+						<Button fx:id="btnDelete">상품 삭제</Button>
+						<Button fx:id="btnInit">초기화</Button>
+					</children>
+				</HBox>
+			</VBox>
+			<VBox>
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10" />
+				</padding>
+				<Label text="상품 테이블" />
+				<HBox>
+					<padding>
+						<Insets top="20" right="10" bottom="10" left="10" />
+					</padding>
+					<children>
+						<TextField fx:id="txtSearch" prefWidth="70"
+							promptText="상품" />
+						<Button fx:id="btnSearch">검색</Button>
+						<Button fx:id="btnTotalList">전체</Button>
+					</children>
+				</HBox>
+				<TableView fx:id="tableView" prefHeight="650"
+					prefWidth="410">
+				</TableView>
+			</VBox>
+		</children>
+	</HBox>
+</AnchorPane>
+

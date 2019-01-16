@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+	prefHeight="300" prefWidth="400"
+	fx:controller="controller.SalesController">
+	<HBox>
+		<children>
+			<VBox>
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10" />
+				</padding>
+				<spacing>10</spacing>
+				<children>
+					<HBox>
+						<children>
+							<Label text="판매 정보" />
+						</children>
+					</HBox>
+				</children>
+				<HBox>
+					<spacing>10</spacing>
+					<children>
+						<Label text="판매수량:" />
+						<TextField fx:id="txtp_count" prefWidth="100" />
+					</children>
+				</HBox>
+				<HBox>
+					<spacing>10</spacing>
+					<children>
+						<Label text="판매가격:" />
+						<TextField fx:id="txtp_price" prefWidth="100" />
+					</children>
+				</HBox>
+				<HBox>
+					<spacing>10</spacing>
+					<children>
+						<Label text="판매일:" />
+						<DatePicker fx:id="dp_day" prefWidth="100" />
+					</children>
+				</HBox>
+				<HBox alignment="center">
+					<spacing>10</spacing>
+					<children>
+						<Button fx:id="btnOk">판매 등록</Button>
+						<Button fx:id="btnInit">초기화</Button>
+						<Button fx:id="btnCancel">닫기</Button>
+					</children>
+				</HBox>
+				<HBox alignment="center">
+					<spacing>10</spacing>
+					<children>
+						<Button fx:id="btnEdit">판매 수정</Button>
+						<Button fx:id="btnDelete">판매 삭제</Button>
+					</children>
+				</HBox>
+			</VBox>
+			<VBox>
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10" />
+				</padding>
+				<Label text="판매 목록 테이블" />
+				<HBox>
+					<padding>
+						<Insets top="10" right="10" bottom="10" left="10" />
+					</padding>
+					<children>
+						<Button fx:id="btnTotalList">전체</Button>
+						<Button fx:id="btnBarChart">매출 현황</Button>
+						<Button fx:id="btnSaveFileDir">저장 폴더 선택</Button>
+						<TextField fx:id="txtSaveFileDir" prefWidth="120"
+							promptText="폴더를 선택하세요" />
+						<Button fx:id="btnExcel">엑셀 파일</Button>
+						<Button fx:id="btnPDF">PDF 파일</Button>
+					</children>
+				</HBox>
+				<TableView fx:id="tableView" prefHeight="400"
+					prefWidth="280">
+				</TableView>
+			</VBox>
+		</children>
+	</HBox>
+</AnchorPane>
+

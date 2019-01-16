@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.beans.*?>
+<?import javafx.collections.ObservableList?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+	prefHeight="400" prefWidth="700"
+	fx:controller="controller.EmployeeController">
+	<HBox>
+		<children>
+			<VBox>
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10" />
+				</padding>
+				<spacing>10</spacing>
+				<children>
+					<HBox> <!-- HBox 컨테이너 선언 -->
+						<children> <!-- 자식 컨트롤 추가 -->
+							<Label text="직원정보 입력" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<children> <!-- 자식 컨트롤 추가 -->
+							<Label text="성명 : " />
+							<TextField fx:id="txtj_Name" prefWidth="70" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<Label text="성별 : " />
+						<fx:define>
+							<ToggleGroup fx:id="genderGroup" />
+						</fx:define>
+						<children>
+							<RadioButton fx:id="rbMale" userData="남성" text="남성"
+								toggleGroup="$genderGroup" />
+							<RadioButton fx:id="rbFemale" userData="여성" text="여성"
+								toggleGroup="$genderGroup" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<children> <!-- 자식 컨트롤 추가 -->
+							<Label text="나이 : " />
+							<TextField fx:id="txtj_Age" prefWidth="30" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<children> <!-- 자식 컨트롤 추가 -->
+							<Label text="핸드폰번호 : " />
+							<TextField fx:id="txtj_Phone" prefWidth="120" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<children> <!-- 자식 컨트롤 추가 -->
+							<Label text="주소 : " />
+							<TextField fx:id="txtj_Addr" prefWidth="200" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<children> <!-- 자식 컨트롤 추가 -->
+							<Label text="입사일 : " />
+							<DatePicker fx:id="dpj_Day" prefWidth="100" />
+						</children>
+					</HBox>
+					<HBox>
+						<spacing>10</spacing>
+						<children> <!-- 자식 컨트롤 추가 -->
+							<Label text="퇴사일 : " />
+							<DatePicker fx:id="dpj_DeleteDay" prefWidth="100" />
+						</children>
+					</HBox>
+					<HBox alignment="center">
+						<spacing>10</spacing>
+						<children> <!-- 자식 컨트롤 추가 -->
+							<Button fx:id="btnOk">직원 등록</Button>
+							<Button fx:id="btnInit">초기화</Button>
+							<Button fx:id="btnCancel">닫기</Button>
+						</children>
+					</HBox>
+					<HBox alignment="center">
+						<spacing>10</spacing>
+						<children> <!-- 자식 컨트롤 추가 -->
+							<Button fx:id="btnEdit">직원 수정</Button>
+							<Button fx:id="btnDelete">직원 퇴사</Button>
+						</children>
+					</HBox>
+				</children>
+			</VBox>
+			<VBox>
+				<padding>
+					<Insets top="10" right="10" bottom="10" left="10" />
+				</padding>
+				<Label text="직원 목록 테이블" />
+				<HBox>
+					<padding>
+						<Insets top="10" right="10" bottom="10" left="10" />
+					</padding>
+					<children> <!-- 자식 컨트롤 추가 -->
+						<TextField fx:id="txtSearch" prefWidth="70"
+							promptText="성명" />
+						<Button fx:id="btnSearch">검색</Button>
+						<Button fx:id="btnTotalList">전체</Button>
+					</children>
+				</HBox>
+				<TableView fx:id="tableView" prefHeight="400"
+					prefWidth="575">
+				</TableView>
+			</VBox>
+		</children>
+	</HBox>
+</AnchorPane>
